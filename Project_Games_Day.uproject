@@ -3,6 +3,13 @@
 	"EngineAssociation": "5.3",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "Project_Games_Day",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
@@ -63,7 +70,7 @@
 			"Enabled": false
 		},
 		{
-			"Name": "OnlineSubsystemEOS",
+			"Name": "OnlineSubsystemSteam",
 			"Enabled": true
 		}
 	]
