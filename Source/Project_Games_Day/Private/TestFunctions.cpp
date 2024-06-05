@@ -4,9 +4,9 @@
 #include "TestFunctions.h"
 #include "Misc/App.h"
 
-void UTestFunctions::Unfocused(bool isChecked)
+void UTestFunctions::Unfocused(bool EnableSoundInBackground)
 {
-	if (isChecked == true)
+	if (EnableSoundInBackground == true)
 	{
 		FApp::SetUnfocusedVolumeMultiplier(1.0f);
 	}

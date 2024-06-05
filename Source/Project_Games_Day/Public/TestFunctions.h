@@ -14,5 +14,5 @@ class PROJECT_GAMES_DAY_API UTestFunctions : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 		UFUNCTION(BlueprintCallable, Category = "Sound on Minimised")
-		static void Unfocused(bool isChecked);
+		static void Unfocused(bool EnableSoundInBackground);
 };
