@@ -19,12 +19,9 @@ void UTestFunctions::Unfocused(bool EnableSoundInBackground)
 
 void UTestFunctions::MicInputTest(float InputVolume)
 {
-	static FAutoConsoleVariableRef CVarMicInputGain(
-		TEXT("voice.MicInputGain"),
-		InputVolume,
-		TEXT("The default gain amount in linear amplitude.\n")
-		TEXT("Value: Gain multiplier."),
-		ECVF_Default);
+	IConsoleVariable* Gain = IConsoleManager::Get().FindConsoleVariable(TEXT("voice.MicInputGain"));
+
+	Gain->Set(InputVolume);
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Some variable values: x: %f"), InputVolume));
 }
