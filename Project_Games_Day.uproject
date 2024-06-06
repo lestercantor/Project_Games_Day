@@ -75,6 +75,10 @@
 		{
 			"Name": "OnlineSubsystemSteam",
 			"Enabled": true
+		},
+		{
+			"Name": "VoiceChat",
+			"Enabled": false
 		}
 	]
 }
