@@ -23,5 +23,5 @@ void UTestFunctions::MicInputTest(float InputVolume)
 
 	Gain->Set(InputVolume);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Some variable values: x: %f"), InputVolume));
+	// GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Some variable values: x: %f"), InputVolume));
 }
