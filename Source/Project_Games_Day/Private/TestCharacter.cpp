@@ -7,7 +7,8 @@
 // Sets default values
 ATestCharacter::ATestCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UDezCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
-	// DezCharacterMovementComponent = Cast<UDezCharacterMovementComponent>(GetCharacterMovement());
+	DezCharacterMovementComponent = Cast<UDezCharacterMovementComponent>(GetCharacterMovement());
+
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
