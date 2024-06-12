@@ -14,8 +14,8 @@ class PROJECT_GAMES_DAY_API UDezCharacterMovementComponent : public UCharacterMo
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditDefaultsOnly) float Sprint_MaxWalkSpeed;
-	UPROPERTY(EditDefaultsOnly) float Walk_MaxWalkSpeed;
+	UPROPERTY(EditDefaultsOnly) float Sprint_MaxWalkSpeed = 1000.0f;
+	UPROPERTY(EditDefaultsOnly) float Walk_MaxWalkSpeed = 500.0f;
 	
 	bool SAFE_bWantsToSprint;
 
@@ -32,9 +32,10 @@ protected:
 
 public:
 	UFUNCTION(BlueprintCallable) void SetSprinting(bool Sprint);
+	UFUNCTION(BlueprintCallable) void CrouchPressed();
 };
 
-
+#pragma region Saved Move
 class FSavedMove_Dez : public FSavedMove_Character
 {
 public:
@@ -48,9 +49,9 @@ public:
 
 	uint8 Saved_bWantsToSprint : 1;
 };
+#pragma endregion
 
-
-
+#pragma region Network Prediction Data Client
 class FNetworkPredictionData_Client_Dez : public FNetworkPredictionData_Client_Character
 {
 public:
@@ -59,3 +60,4 @@ public:
 	typedef FNetworkPredictionData_Client_Character Super;
 	virtual FSavedMovePtr AllocateNewMove() override;
 };
+#pragma endregion
