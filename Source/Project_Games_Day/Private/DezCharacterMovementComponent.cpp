@@ -6,6 +6,7 @@
 
 UDezCharacterMovementComponent::UDezCharacterMovementComponent()
 {
+    NavAgentProps.bCanCrouch = true;
 }
 
 bool FSavedMove_Dez::CanCombineWith(const FSavedMovePtr& NewMove, ACharacter* InCharacter, float MaxDelta) const
@@ -104,5 +105,10 @@ void UDezCharacterMovementComponent::OnMovementUpdated(float DeltaSeconds, const
 void UDezCharacterMovementComponent::SetSprinting(bool Sprint)
 {
     bWantsToSprint = Sprint;
+}
+
+void UDezCharacterMovementComponent::CrouchPressed()
+{
+    bWantsToCrouch = !bWantsToCrouch;
 }
 
