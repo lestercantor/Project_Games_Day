@@ -15,7 +15,7 @@ void ADezPlayerCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaT
 {
 	Super::UpdateViewTarget(OutVT, DeltaTime);
 
-	if (ATestCharacter* TestCharacter = Cast<ATestCharacter>(GetOwningPlayerController()->GetPawn()))
+	/*if (ATestCharacter* TestCharacter = Cast<ATestCharacter>(GetOwningPlayerController()->GetPawn()))
 	{
 		UDezCharacterMovementComponent* DezCMC = TestCharacter->GetDezCharacterMovement();
 		FVector TargetCrouchOffset = FVector(
@@ -24,6 +24,7 @@ void ADezPlayerCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaT
 			DezCMC->GetCrouchedHalfHeight() - TestCharacter->GetClass()->GetDefaultObject<ACharacter>()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight());
 
 		FVector Offset = FMath::Lerp(FVector::ZeroVector, TargetCrouchOffset, FMath::Clamp(CrouchBlendTime / CrouchBlendDuration, 0.0f, 1.0f));
+		
 
 		if (DezCMC->IsCrouching())
 		{
@@ -33,11 +34,13 @@ void ADezPlayerCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaT
 		else
 		{
 			CrouchBlendTime = FMath::Clamp(CrouchBlendTime - DeltaTime, 0.0f, CrouchBlendDuration);
+
 		}
 
 		if (DezCMC->IsMovingOnGround())
 		{
 			OutVT.POV.Location += Offset;
 		}
-	}
+		
+	}*/
 }
