@@ -32,7 +32,7 @@ void ATestCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeigh
 	float StartBaseEyeHeight = BaseEyeHeight;
 	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
 	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
-	PlayerCamera->SetRelativeLocation(FVector(0.0f, 0.0f, BaseEyeHeight), false);
+	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
 }
 
 void ATestCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
@@ -45,7 +45,7 @@ void ATestCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightA
 	float StartBaseEyeHeight = BaseEyeHeight;
 	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
 	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
-	PlayerCamera->SetRelativeLocation(FVector(0.0f, 0.0f, BaseEyeHeight), false);
+	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
 }
 
 void ATestCharacter::CalcCamera(float DeltaTime, FMinimalViewInfo& OutResult)
