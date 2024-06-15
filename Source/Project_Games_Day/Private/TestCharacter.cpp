@@ -22,40 +22,40 @@ ATestCharacter::ATestCharacter(const FObjectInitializer& ObjectInitializer) : Su
 	CrouchSpeed = 12.0f;
 }
 
-void ATestCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
-{
-	if (HalfHeightAdjust == 0)
-	{
-		return;
-	}
-
-	float StartBaseEyeHeight = BaseEyeHeight;
-	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
-	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
-	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
-}
-
-void ATestCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
-{
-	if (HalfHeightAdjust == 0)
-	{
-		return;
-	}
-
-	float StartBaseEyeHeight = BaseEyeHeight;
-	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
-	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
-	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
-}
-
-void ATestCharacter::CalcCamera(float DeltaTime, FMinimalViewInfo& OutResult)
-{
-	if (PlayerCamera)
-	{
-		PlayerCamera->GetCameraView(DeltaTime, OutResult);
-		OutResult.Location += CrouchEyeOffset;
-	}
-}
+//void ATestCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
+//{
+//	if (HalfHeightAdjust == 0)
+//	{
+//		return;
+//	}
+//
+//	float StartBaseEyeHeight = BaseEyeHeight;
+//	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
+//	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
+//	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
+//}
+//
+//void ATestCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
+//{
+//	if (HalfHeightAdjust == 0)
+//	{
+//		return;
+//	}
+//
+//	float StartBaseEyeHeight = BaseEyeHeight;
+//	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
+//	CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
+//	PlayerCamera->SetRelativeLocation(FVector(-10.0f, 0.0f, BaseEyeHeight), false);
+//}
+//
+//void ATestCharacter::CalcCamera(float DeltaTime, FMinimalViewInfo& OutResult)
+//{
+//	if (PlayerCamera)
+//	{
+//		PlayerCamera->GetCameraView(DeltaTime, OutResult);
+//		OutResult.Location += CrouchEyeOffset;
+//	}
+//}
 
 // Called when the game starts or when spawned
 void ATestCharacter::BeginPlay()
@@ -69,8 +69,8 @@ void ATestCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	float CrouchInterpTime = FMath::Min(1.0f, CrouchSpeed * DeltaTime);
-	CrouchEyeOffset = (1.0f - CrouchInterpTime) * CrouchEyeOffset;
+	//float CrouchInterpTime = FMath::Min(1.0f, CrouchSpeed * DeltaTime);
+	//CrouchEyeOffset = (1.0f - CrouchInterpTime) * CrouchEyeOffset;
 }
 
 // Called to bind functionality to input
