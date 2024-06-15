@@ -20,5 +20,5 @@ class PROJECT_GAMES_DAY_API ADezPlayerCameraManager : public APlayerCameraManage
 public:
 	ADezPlayerCameraManager();
 
-	virtual void UpdateViewTarget(FTViewTarget& OutVT, float DeltaTime) override;
+	//virtual void UpdateViewTarget(FTViewTarget& OutVT, float DeltaTime) override;
 };
