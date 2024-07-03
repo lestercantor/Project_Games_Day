@@ -17,17 +17,20 @@ public:
 	// Sets default values for this character's properties
 	ATestCharacter(const FObjectInitializer& ObjectInitializer);
 
-	void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
-	void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+	//void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+	//void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
 
-	void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;
+	//void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera)
+		class UCameraComponent* PlayerCamera;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera)
-		class UCameraComponent* PlayerCamera;
+
 
 public:	
 	// Called every frame
